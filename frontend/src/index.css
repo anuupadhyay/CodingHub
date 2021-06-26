@@ -1,0 +1,18 @@
+.footer {
+  position: relative;
+  margin-top: auto;
+  /* negative value of footer height */
+  /*  height: 180px; */
+  clear: both;
+  /*Custom styling*/
+}
+
+/* Opera Fix thanks to Maleika (Kohoutec) */
+
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  /* thank you Erik J - negate effect of float*/
+}
