@@ -13,14 +13,16 @@ function Post({post}) {
                         <p>{post.body.length > MAX_LENGTH ? 
                             (
                             <div>
-                                {`${post.body.substring(0, MAX_LENGTH)}...`}<a href="#">Read more</a>
+                                {`${post.body.substring(0, MAX_LENGTH)}...`}
+                                <Link to={`/post/${post.id}`}>
+                                    Read more
+                                </Link>
                             </div>
                             ) :
                             <p>{post.body}</p>                        
                         }</p>
                 </ListGroup.Item>
             </div>
-
     )
 }
 

@@ -4,9 +4,12 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Post, Tutorial
+from taggit_serializer.serializers import (TagListSerializerField,
+                                           TaggitSerializer)
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
+    tags = TagListSerializerField()
     author = serializers.SlugRelatedField(
         queryset=User.objects.all(), slug_field='username'
     )

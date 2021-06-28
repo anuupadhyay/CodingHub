@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'base.apps.BaseConfig',
+    'taggit_serializer',
+    'taggit'
     # 'blog.apps.BlogConfig',
 ]
 
