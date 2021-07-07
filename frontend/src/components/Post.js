@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function Post({post}) {
     const MAX_LENGTH = 200;
     return (
-            <div>
+            <ListGroup variant='flush'>
                 <ListGroup.Item>
                     <Link to={`/post/${post.id}`}>
                         <h5>{post.title}</h5>
@@ -22,7 +22,7 @@ function Post({post}) {
                             <p>{post.body}</p>                        
                         }</p>
                 </ListGroup.Item>
-            </div>
+            </ListGroup>
     )
 }
 

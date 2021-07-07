@@ -14,6 +14,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
+#from django.views.decorators.csrf import csrf_exempt
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -32,8 +33,10 @@ class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 
+@api_view(['POST'])
 def registerUser(request):
     data = request.data
+    print(data)
 
     try:
         user = User.objects.create(

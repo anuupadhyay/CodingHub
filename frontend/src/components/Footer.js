@@ -19,9 +19,9 @@ const Footer = () => {
         <Column>
             <FooterLink href="#">5th Floor, A-118, Secotr 136, Noida, Uttar Pradesh</FooterLink>
             <FooterLink href="#">feedback@geeksforgeeks.org</FooterLink>
-            <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">Contact Us</FooterLink>
-            <FooterLink href="#">Copyright Policy</FooterLink>
+            <FooterLink href="#">Facebook</FooterLink>
+            <FooterLink href="#">Instagram</FooterLink>
+            <FooterLink href="#">LinkedIn</FooterLink>
           </Column>
           <Column>
             <Heading>Company</Heading>

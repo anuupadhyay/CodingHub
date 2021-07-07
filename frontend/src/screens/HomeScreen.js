@@ -27,13 +27,13 @@ function HomeScreen() {
                                 {loading ? <Loader />
                                 : error ? <Message variant='danger'>{error}</Message>
                                     : 
-                                    <div>
+                                    <ListGroup.Item>
                                         {posts.map(post => (
-                                            <div key={post._id} sm={12} md={6} lg={4} xl={3}>
+                                            <div key={post.id}>
                                                 <Post post={post}/>
                                             </div>
                                         ))}
-                                    </div>
+                                    </ListGroup.Item>
                                 }
                             </ListGroup>
                         </Col>
