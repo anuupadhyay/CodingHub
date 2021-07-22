@@ -9,6 +9,16 @@ import RegisterScreen from './screens/RegisterScreen';
 import LiveCourseScreen from './screens/LiveCourseScreen';
 import OnlineCourseScreen from './screens/OnlineCourseScreen';
 import CourseScreen from './screens/CourseScreen';
+import ApplyJobScreen from './screens/ApplyJobScreen';
+import PostJobScreen from './screens/PostJobScreen';
+import JobScreen from './screens/JobScreen';
+import CourseListScreen from './screens/CourseListScreen';
+import CategoryListScreen from './screens/CategoryListScreen';
+import JobListScreen from './screens/JobListScreen';
+import TutorialListScreen from './screens/TutorialListScreen';
+import InstructorListScreen from './screens/InstructorListScreen';
+import UserListScreen from './screens/UserListScreen';
+import UserEditScreen from './screens/UserEditScreen';
 
 function App() {
   return (
@@ -24,6 +34,16 @@ function App() {
             <Route path='/courses/live/' component={LiveCourseScreen}/>
             <Route path='/courses/online/' component={OnlineCourseScreen}/>
             <Route path='/courses/:id' component={CourseScreen} exact/>
+            <Route path='/jobs/apply-for-jobs/' component={ApplyJobScreen}/>
+            <Route path='/jobs/post-a-job/' component={PostJobScreen}/>
+            <Route path='/jobs/:id' component={JobScreen}/>
+            <Route path='/admin/courselist' component={CourseListScreen}/>
+            <Route path='/admin/categorylist' component={CategoryListScreen}/>
+            <Route path='/admin/instructorlist' component={InstructorListScreen}/>
+            <Route path='/admin/joblist' component={JobListScreen}/>
+            <Route path='/admin/userlist' component={UserListScreen}/>
+            <Route path='/admin/tutoriallist' component={TutorialListScreen}/>
+            <Route path='/admin/user/:id/edit' component={UserEditScreen}/>
           </Switch>            
           </Container>
         </main>

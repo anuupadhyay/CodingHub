@@ -8,15 +8,18 @@ import {listPosts} from '../actions/postActions'
 import axios from 'axios'
 //import Post from '../components/Post'
 
-function HomeScreen() {
+function HomeScreen({history}) {
 
     const dispatch = useDispatch()
     const postList = useSelector(state => state.postList)
     const {error, loading, posts} = postList
 
+    let keyword = history.location.search
+    console.log(keyword)
+
     useEffect(() => {
-        dispatch(listPosts())
-    }, [])
+        dispatch(listPosts(keyword))
+    }, [dispatch, keyword])
 
     return (
         <div>

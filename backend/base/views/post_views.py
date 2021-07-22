@@ -13,7 +13,10 @@ from rest_framework import status
 
 @api_view(['GET'])
 def getPosts(request):
-    posts = Post.objects.all()
+    query = request.query_params.get('keyword')
+    if query == None:
+        query = ''
+    posts = Post.objects.filter(title__icontains=query)
     serializer = PostSerializer(posts, many=True)
     return Response(serializer.data)
 

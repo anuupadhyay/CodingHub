@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button, Card} from 'react-bootstrap'
 import {listPostDetails} from '../actions/postActions'
-//import post from 'Pos'
 
 
 function BlogScreen({ match }) {

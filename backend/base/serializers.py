@@ -3,7 +3,7 @@ from django.db.models import fields
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import Post, Tutorial, Instructor, Course, Review
+from .models import Post, Recruiter, Tutorial, Instructor, Course, Review, Job, CandidateApplication
 from taggit_serializer.serializers import (TagListSerializerField,
                                            TaggitSerializer)
 
@@ -67,16 +67,28 @@ class ReviewSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class InstructorSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Instructor
+        fields = '__all__'
+
+
 class CourseSerializer(serializers.ModelSerializer):
     reviews = serializers.SerializerMethodField(read_only="True")
-
-    instructor = serializers.SlugRelatedField(
-        queryset=Instructor.objects.all(), slug_field='name'
-    )
+    instructor_name = serializers.CharField(
+        source='instructor.name', read_only=True)
+    work_description = serializers.CharField(
+        source='instructor.work_description', read_only=True)
+    full_detail = serializers.CharField(
+        source='instructor.full_detail', read_only=True)
 
     class Meta:
         model = Course
-        fields = '__all__'
+        fields = ['user', 'id', 'name', 'description', 'image',
+                  'overview', 'rating', 'numReviews', 'price',
+                  'course_type', 'paid_or_free', 'instructor_name',
+                  'work_description', 'full_detail', 'reviews']
 
     def get_reviews(self, obj):
         reviews = obj.review_set.all()
@@ -84,8 +96,28 @@ class CourseSerializer(serializers.ModelSerializer):
         return serializer.data
 
 
-class InstructorSerializer(serializers.ModelSerializer):
+"""     def get_instructor(self, obj):
+        instructor = obj.name
+        serializer = InstructorSerializer(instructor, many=True)
+        return serializer.data """
+
+
+class JobSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Instructor
+        model = Job
+        fields = '__all__'
+
+
+class CandidateApplicationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CandidateApplication
+        fields = '__all__'
+
+
+class RecruiterSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Recruiter
         fields = '__all__'

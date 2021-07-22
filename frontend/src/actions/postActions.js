@@ -12,11 +12,11 @@ POST_DETAILS_FAIL,
 
 } from '../constants/postConstants'
 
-export const listPosts = () => async (dispatch) => {
+export const listPosts = (keyword= '') => async (dispatch) => {
     try {
         dispatch({type: POST_LIST_REQUEST})
 
-        const {data} = await axios.get('/api/posts/')
+        const {data} = await axios.get(`/api/posts${keyword}`)
 
         dispatch({
             type: POST_LIST_SUCCESS,

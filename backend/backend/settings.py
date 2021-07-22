@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'base.apps.BaseConfig',
     'taggit_serializer',
-    'taggit'
+    'taggit',
+    'phonenumber_field',
     # 'blog.apps.BlogConfig',
 ]
 
