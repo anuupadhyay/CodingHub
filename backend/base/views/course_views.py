@@ -87,3 +87,20 @@ def createCourseReview(request, pk):
         course.save()
 
         return Response('Review Added')
+
+
+@api_view(['POST'])
+@permission_classes([IsAdminUser])
+def createCourse(request):
+    user = request.user
+    course = Course.objects.create(
+        user=user,
+        name='Sample name',
+        price=0,
+        brand='Sample Brand',
+        countInStock=0,
+        category='Sample Category',
+        description=''
+    )
+    serializer = CourseSerializer(course, many=False)
+    return Response(serializer.data)

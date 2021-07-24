@@ -19,6 +19,7 @@ import TutorialListScreen from './screens/TutorialListScreen';
 import InstructorListScreen from './screens/InstructorListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
+import CourseEditScreen from './screens/CourseEditScreen';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path='/admin/userlist' component={UserListScreen}/>
             <Route path='/admin/tutoriallist' component={TutorialListScreen}/>
             <Route path='/admin/user/:id/edit' component={UserEditScreen}/>
+            <Route path='/admin/course/:id/edit' component={CourseEditScreen}/>
           </Switch>            
           </Container>
         </main>
