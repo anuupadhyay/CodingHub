@@ -2,17 +2,13 @@
 
 > A webiste for developers interested in reading the computer science related stuff...
 
-## Quick Start
-``` bash
-cd pollster-django-crash
-# Install dependencies
-pip install pipenv
+Database: MySQL
 
-pipenv shell
-# Install django
-pipenv install django
-
-cd pollster
-# Serve on localhost:8000
-python manage.py runserver
-```
+# Download & Setup Instructions
+* 1 - Clone project: git clone https://github.com/anuupadhyay/CodingHub.git
+* 2 - cd backend
+* 3 - python manage.py runserver
+# Install react modules
+* 1 - cd frontend
+* 2 - npm install
+* 3 - npm start
