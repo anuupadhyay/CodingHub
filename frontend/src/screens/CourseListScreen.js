@@ -95,9 +95,9 @@ function CourseListScreen({history}) {
                                         <i className='fas fa-edit'></i>  
                                     </Button>
                                 </LinkContainer>
-                                    <Button variant='danger' className='btn-sm'>
+                                    <Button variant='danger' className='btn-sm' onClick={() => deleteHandler(course.id)}>
                                         <i className='fas fa-trash'></i>  
-                                    </Button> 
+                                    </Button>
                             </tr>
                         ))} 
                     </tbody>
