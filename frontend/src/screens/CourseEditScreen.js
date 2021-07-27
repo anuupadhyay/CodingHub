@@ -12,7 +12,6 @@ import { COURSE_UPDATE_RESET } from '../constants/courseConstants'
 function CourseEditScreen({match, history}) {
 
     const courseId = match.params.id;
-
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [image, setImage] = useState('')
